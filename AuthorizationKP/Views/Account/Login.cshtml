@@ -1,0 +1,96 @@
+﻿@model AuthorizationKP.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Authorization";
+    Layout = "_Layout";
+}
+
+<h1>Регистрация</h1>
+<div>
+    <form asp.asp-controller="Account" asp-action="Login" method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div>
+            <label asp-for="Login"></label>
+            <input asp-for="Login">
+            <span asp-validation-for="Login"></span>
+        </div>
+        <div>
+            <label asp-for="PasswordHash"></label>
+            <input asp-for="PasswordHash">
+            <span asp-validation-for="PasswordHash"></span>
+        </div>
+        <button>Авторизироваться</button>
+    </form>
+
+    <a asp.asp-controller="Account" asp-action="ChangePassword">Забыли пароль?</a>
+    
+</div>
+
+@* @page
+@model AuthorizationKP.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <section class="login-section">
+            <form id="account" method="post">
+                <h2 class="text-center mb-4">Добро пожаловать!</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Login" class="form-control" autocomplete="username" aria-required="true" placeholder="Email" />
+                    <label asp-for="Login" class="form-label"></label>
+                    <span asp-validation-for="Login" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="PasswordHash" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Пароль" />
+                    <label asp-for="PasswordHash" class="form-label"></label>
+                    <span asp-validation-for="PasswordHash" class="text-danger"></span>
+                </div>
+
+                @* <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="RememberMe" />
+                        <label class="form-check-label" asp-for="RememberMe">Запомнить пароль?</label>
+                    </div>
+                </div> 
+                <div class="mb-3">
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-dark text-white">Войти</button>
+                </div>
+                <div class="mb-3">
+                    <h2 class="text-center mb-3">Войти через:</h2>
+                    <div class="d-flex justify-content-center">
+                        <a href="/GoogleAuth/GoogleLogin?returnUrl=@Model.ReturnUrl">
+                            <img src="~/1.png" alt="Google" class="auth-logo" style="cursor: pointer; width: 30px; height: 30px; margin-left: 10px;" />
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-3 text-center">
+                    <a id="forgot-password" asp-page="./ForgotPassword">Забыли свой пароль?</a>
+                </div>
+                <div class="mt-1 text-center">
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Регистрация</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById('vk-auth-button').addEventListener('click', function () {
+            window.location.href = this.getAttribute('href');
+        });
+
+        document.getElementById('yandex-auth-button').addEventListener('click', function () {
+            window.location.href = this.getAttribute('href');
+        });
+    </script>
+}
+ *@

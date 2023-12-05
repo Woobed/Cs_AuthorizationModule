@@ -1,0 +1,54 @@
+﻿@model AuthorizationKP.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "_Layout";
+}
+
+<h1>Регистрация</h1>
+<div>
+    <form asp.asp-controller="Account" asp-action="Register" method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div>
+            <label asp-for="Login"></label>
+            <input asp-for="Login">
+            <span asp-validation-for="Login"></span>
+        </div>
+
+        <div>
+            <label asp-for="PasswordHash"></label>
+            <input asp-for="PasswordHash"></">
+            <span asp-validation-for="PasswordHash"></"></span>
+        </div>
+
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+
+        <div>
+            <label asp-for="SecondName"></label>
+            <input asp-for="SecondName">
+            <span asp-validation-for="SecondName"></span>
+        </div>
+
+        <div>
+            <label asp-for="NormalizedEmail"></label>
+            <input asp-for="NormalizedEmail">
+            <span asp-validation-for="NormalizedEmail"></span>
+            
+        </div>
+        <div>
+            <label asp-for="PasswordConfirm"></label>
+            <input asp-for="PasswordConfirm">
+           
+            
+            <span asp-validation-for="PasswordConfirm"></span>
+        </div>
+        @* <input type="submit" name="response" value="Register" formaction=@Url.Action("Register") formmethod="post" class="btn btn-default" /> *@
+        <button>Зарегистрироваться</button>
+
+    </form>
+</div>
+@* href="https://Localhost:7053/Account/TwoFactAuthenticate/?login=@Model.Login?systemConfirmCode=@Model.systemConfirmCode *@

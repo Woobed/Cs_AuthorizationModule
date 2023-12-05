@@ -1,0 +1,20 @@
+﻿@model AuthorizationKP.Models.TwoFactAuthenticationViewModel
+@{
+    ViewData["Title"] = "TwoFactAuthentication";
+}
+
+<h1>Подтверждение адреса электронной почты</h1>
+<div>
+    <form  method="post">
+      <div asp-validation-summary="All"></div>
+
+        <div>
+            <label asp-for="userConfirmCode"></label>
+            <input asp-for="userConfirmCode">
+            <span asp-validation-for="userConfirmCode"></span>
+        </div>
+        <button asp.asp-controller ="Account" asp-action="TwoFactAuthenticate">Подтвердить почту</button>
+        <button asp.asp-controller="Account" asp-action="TwoFactAuthenticate">Пропустить</button>
+    </form>
+</div>
+
